@@ -97,6 +97,10 @@ func (s *Source) ToFile(path string) error {
 	return result.ToFile(path)
 }
 
+func (s *Source) Result() (*Result, error){
+	return s.toResult()
+}
+
 func (s *Source) Resize(option *ResizeOption) error {
 	if option == nil {
 		return errors.New("option is required")
